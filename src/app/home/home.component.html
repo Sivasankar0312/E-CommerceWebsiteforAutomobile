@@ -1,0 +1,150 @@
+<div class="container-fluid">
+  <div class="row">
+    <nav class="col-md-2 d-md-block bg-light sidebar">
+      <div class="sidebar-sticky">
+        <ul class="nav flex-column">
+          <li class="nav-item">
+            <a class="nav-link active">
+              <i class="fa fa-user"></i>User Profile
+            </a>
+            <a routerLink="/cart" class="button fancy-button">
+              <i class="material-icons"></i>Checkout
+            </a>
+          </li>
+          <!-- Calling SignOut() Api from AuthService -->
+          <li class="nav-item">
+            <a class="nav-link" (click)="authService.SignOut()">
+              <i class="fa fa-sign-out"></i>Log out
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <!-- Main content -->
+    <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+      <div class="inner-adjust">
+        <div class="pt-3 pb-2 mb-3 border-bottom">
+          <h1 class="h2">User Profile</h1>
+        </div>
+        <!-- Show user data when logged in -->
+        <div class="row" *ngIf="authService.userData as user">
+          <div class="col-md-12">
+            <div class="media">
+              <div class="media-body">
+                <h1>Hello: <strong>{{(user.displayName) ? user.displayName : 'User'}}</strong></h1>
+                <img src="{{user.photoUrl}}">
+     
+                <p>Email: <strong>{{user.email}}</strong></p>
+                <p>Email Verified: <strong>{{user.emailVerified}}</strong></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+</div>
+<div class="container-xl">
+	<div class="row">
+		<div class="col-md-12">
+			<h2>Featured <b>Services</b></h2>
+			<div id="myCarousel2" class="carousel slide" data-ride="carousel2" data-interval="0">
+			<!-- Carousel indicators -->
+			<ol class="carousel-indicators">
+				<li data-target="#myCarousel2" data-slide-to="0" class="active"></li>
+				<li data-target="#myCarousel2" data-slide-to="1"></li>
+				<li data-target="#myCarousel2" data-slide-to="2"></li>
+			</ol>   
+			<!-- Wrapper for carousel items -->
+			<div class="carousel-inner">
+				<div class="item carousel-item active">
+					<div class="row">
+						<div class="col-sm-3"  *ngFor="let item of Service;let i=index">
+							<div class="thumb-wrapper">
+								<span class="wish-icon"><i class="fa fa-heart-o"></i></span>
+								<div class="img-box">
+                  <img src="{{fileUploads[i].url}}" class="img-fluid" alt="">
+																	
+								</div>
+								<div class="thumb-content">
+									<h4>{{item.servicename}}</h4>
+									
+									<h4>{{item.description}}</h4>									
+									<div class="star-rating">
+										<ul class="list-inline">
+											<li class="list-inline-item"><i class="fa fa-star"></i></li>
+											<li class="list-inline-item"><i class="fa fa-star"></i></li>
+											<li class="list-inline-item"><i class="fa fa-star"></i></li>
+											<li class="list-inline-item"><i class="fa fa-star"></i></li>
+											<li class="list-inline-item"><i class="fa fa-star-o"></i></li>
+										</ul>
+									</div>
+
+									<button type="submit" class="btn btn-primary" (click)="add(item)" routerLink="/order">Book Now</button>
+								</div>						
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="fo">
+  <footer id="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3">
+          <a href="index.html"><img src="assets/images/logo2.jpg" alt="" class="img-fluid logo-footer" style="width: 100px; height: 150px;"></a>
+                    <div class="footer-about">
+                        <p> Automobile workshop provide services of preventive maintenance of motor vehicles as well as for repairs and overhauls, Preventive maintenance cuts the down time and increases, life of the vehicle a reliable and well equipped automobile workshop is a must for this purpose.</p>
+                    </div>
+
+        </div>
+        <div class="col-md-3">
+          <div class="useful-link">
+            <h2>Useful Links</h2>
+            <img src="./assets/images/about/home_line.png" alt="" class="img-fluid">
+            <div class="use-links">
+              <li><a href="/home"><i class="fa-solid fa-angles-right"></i> Home</a></li>
+              <li><a href="/aboutus"><i class="fa-solid fa-angles-right"></i> About Us</a></li>
+              
+              <li><a href="/contactus"><i class="fa-solid fa-angles-right"></i> Contact</a></li>
+            </div>
+          </div>
+
+        </div>
+                  <div class="col-md-3">
+                      <div class="social-links">
+            <h2>Follow Us</h2>
+            <img src="./assets/images/about/home_line.png" alt="">
+            <div class="social-icons">
+              <li><a href=""><i class="fa-brands fa fa-facebook-f"></i> Facebook</a></li>
+              <li><a href=""><i class="fa-brands fa fa-instagram"></i> Instagram</a></li>
+              <li><a href=""><i class="fa-brands fa fa-whatsapp"></i> Whatsapp</a></li>
+            </div>
+          </div>
+                  
+
+                  </div>
+        <div class="col-md-3">
+          <div class="address">
+            <h2>Address</h2>
+            <img src="./assets/images/about/home_line.png" alt="" class="img-fluid">
+            <div class="address-links">
+              <li class="address1"><i class="fa-solid fa fa-location-arrow "></i> Gces,Trichy,Srirangam
+                </li>
+                 <li><a href=""><i class="fa-solid fa fa-phone"></i> +91 90904500112</a></li>
+                 <li><a href=""><i class="fa-solid fa fa-envelope"></i> automobile@gmail.com</a></li>
+            </div>
+          </div>
+        </div>
+                
+      </div>
+    </div>
+
+  </footer>
+
+</div>
+

@@ -1,0 +1,28 @@
+<div class="form-group">
+    <button type="button" (click)="getRepos()" class="btn btn-primary">Get Response</button>
+  </div>
+   
+  <div *ngIf="loading">loading...</div>
+   
+  <div *ngIf="errorMessage" class="alert alert-warning">
+    <strong>Warning!</strong> {{errorMessage | json}}
+  </div>
+   
+   
+  <table class='table'>
+    <thead>
+      <tr>
+        <th>Email</th>
+        <th>Subject</th>
+        <th>Text</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let repo of repos;">
+        <td>{{repo.to}}</td>
+        <td>{{repo.subject}}</td>
+        <td>{{repo.text}}</td>
+      </tr>
+    </tbody>
+  </table>
+   

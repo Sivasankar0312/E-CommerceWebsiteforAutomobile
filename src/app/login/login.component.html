@@ -1,0 +1,47 @@
+<section class="vh-100" style="background-image: url('assets/images/wp4043244-car-parts-wallpapers.jpg');background-size: cover;background-repeat: no-repeat;height: 100vh;">
+    <div class="container py-5 h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+                <div class="card shadow-2-strong" style="border-radius: 1rem;">
+                    <div class="card-body p-5 text-center">
+                        <div class="displayTable">
+                            <div class="displayTableCell">
+                              <div class="authBlock">
+                                <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Login</p>
+                                <div class="formGroup form-outline mb-4">
+                                  <input type="email" class="formControl form-control form-control-lg" placeholder="Username" #userEmail required>
+                                </div>
+                                <div class="formGroup form-outline mb-4">
+                                  <input type="password" class="formControl form-control form-control-lg" placeholder="Password" #userPassword required>
+                                </div>
+                                <!-- Calling SignIn Api from AuthService -->
+                                <div class="formGroup form-outline mb-4">
+                                  <input type="button" class="btn btn-primary" value="Log in" (click)="authService.SignIn(userEmail.value, userPassword.value)">
+                                </div>
+                                <div class="formGroup form-outline mb-4">
+                                  <span class="or"><span class="orInner">Or</span></span>
+                                </div>
+                                <!-- Calling GoogleAuth Api from AuthService -->
+                                <div class="formGroup form-outline mb-4">
+                                  <button type="button" class="btn btn-danger" (click)="authService.GoogleAuth()">
+                                    <i class="fab fa-google-plus-g"></i>
+                                    Log in with Google
+                                  </button>
+                                </div>
+                                <div class="forgotPassword form-outline mb-4">
+                                  <span routerLink="/forgot-password">Forgot Password?</span>
+                                </div>
+                              </div>
+                              <div class="redirectToLogin form-outline mb-4">
+                                <span>Don't have an account?<span class="redirect" routerLink="/signup"> Sign Up</span></span>
+                              </div>
+                            </div>
+                          </div>
+                          
+                        
+                    </div>
+                </div>
+            </div>
+        </div> 
+    </div>
+</section>

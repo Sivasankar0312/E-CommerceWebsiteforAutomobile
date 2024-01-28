@@ -1,0 +1,38 @@
+<div class="form-group">
+    <button type="button" (click)="getRepos()" class="btn btn-primary">Get Response</button>
+  </div>
+   
+  <div *ngIf="loading">loading...</div>
+   
+  <div *ngIf="errorMessage" class="alert alert-warning">
+    <strong>Warning!</strong> {{errorMessage | json}}
+  </div>
+   
+   
+  <table class='table'>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Doorno</th>
+        <th>Street</th>
+        <th>Address</th>
+        <th>Landmark</th>
+        <th>City</th>
+        <th>State</th>
+        <th>Pincode</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let repo of repos;">
+        <td>{{repo.name}}</td>
+        <td>{{repo.doorno}}</td>
+        <td>{{repo.street}}</td>
+        <td>{{repo.address}}</td>
+        <td>{{repo.landmark}}</td>
+        <td>{{repo.city}}</td>
+        <td>{{repo.state}}</td>
+        <td>{{repo.pincode}}</td>
+      </tr>
+    </tbody>
+  </table>
+   

@@ -1,0 +1,39 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.background-image{
+    background-image: url('src/assets/images/wp4043220-car-parts-wallpapers.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+}
+.wrapper-six{
+    margin-top: 100px;
+    font-weight: 700;
+    text-align: center;
+    font-size: 40px;
+    font-family:"Audiowide",sans-serif;
+    text-transform: uppercase;
+    background: linear-gradient(90deg,#fffffff5,rgba(238, 243, 246,100),#f8f7f7);
+    letter-spacing: 5px;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color:transparent;
+    background-repeat: no-repeat;
+    background-size: 80%;
+    animation: shine 5s linear infinite;
+    position: center;
+}
+@keyframes shine{
+    0%{
+        background-position-x:-500%;
+    }
+    100%{
+        background-position-x:500%;
+    }
+}
+nav-link text-light{
+    color: black;
+}
